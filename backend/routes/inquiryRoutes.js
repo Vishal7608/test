@@ -1,5 +1,5 @@
 const express = require('express');
-// const nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 
 const CrewInquiry = require('../models/CrewInquiry');
 
@@ -26,13 +26,13 @@ router.get('/test', (req, res) => {
 // ==============================
 // NODEMAILER SETUP
 // ==============================
-// const transporter = nodemailer.createTransport({
-//   service: 'gmail',
-//   auth: {
-//     user: process.env.EMAIL_USER,
-//     pass: process.env.EMAIL_PASS,
-//   },
-// });
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
 
 // ==============================
 // CREATE INQUIRY ROUTE
