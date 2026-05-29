@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const serviceRoutes = require('./routes/serviceRoutes');
 const quotationRoutes = require('./routes/quotationRoutes');
+const inquiryRoutes = require('./routes/inquiryRoutes');
 require('dotenv').config(); 
 const app = express();
 
@@ -33,6 +34,8 @@ const connectDB = async () => {
 app.use('/', serviceRoutes);
  
 app.use('/quotations', quotationRoutes);
+
+app.use('/api', inquiryRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;
